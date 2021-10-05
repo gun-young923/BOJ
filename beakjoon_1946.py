@@ -1,6 +1,7 @@
 import sys
 
 case = int(sys.stdin.readline())
+
 for test_case in range(case):
     num = int(sys.stdin.readline())
     array =[0]* (num)
