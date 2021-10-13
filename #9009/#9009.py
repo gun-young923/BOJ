@@ -13,3 +13,14 @@ for i in range(t):
             if n==0:
                 break
     print(" ".join(map(str, l[::-1])))
+
+#피보나치수열
+""" f=[0,1]
+def fib(n):
+    for i in range(n):
+        if n<len(f):
+            return f[n]
+        else:
+            f.append(fib(n-1)+fib(n-2))
+    return f[n]
+print(fib(40)) """
