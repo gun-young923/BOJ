@@ -17,3 +17,19 @@ for i in arr:
         cnt = 0
     ans = max(ans, cnt)
 print(ans)
+
+#1
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+cnt=[0]*n
+for i in range(n-1):
+    for j in range(i+1,n):
+        if arr[i] > arr[j]:
+            cnt[i]+=1
+        else:
+            break
+print(max(cnt)) """
