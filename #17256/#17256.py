@@ -10,3 +10,11 @@ b.append(y)
 b.append(z)
 
 print(b[0],b[1],b[2])
+
+'''
+############### 다른 방법 ####################
+I=lambda:map(int,input().split())
+a,b,c=I()
+d,e,f=I()
+print(d-c,e//b,f-a)
+'''
