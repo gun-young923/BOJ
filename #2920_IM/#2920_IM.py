@@ -8,3 +8,6 @@ elif arr == b:
     print('descending')
 else:
     print('mixed')
+
+#2
+# print({"12345678":"ascending","87654321":"descending"}.get(input()[::2],"mixed"))
