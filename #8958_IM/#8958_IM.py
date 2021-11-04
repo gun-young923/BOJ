@@ -32,3 +32,14 @@ for _ in range(int(input())):
         else:
             cnt = 1
     print(ans) """
+
+#3
+import sys
+input = sys.stdin.readline
+
+for _ in range(int(input())):
+    arr = input().rstrip().split('X') #'X'별로 나눠서 'O'만 모아서 계산
+    ans = 0
+    for i in arr:
+        ans += sum(list(range(len(i)+1)))
+    print(ans)
