@@ -17,3 +17,18 @@ for _ in range(int(input())):
         i += A.find('X')+1
     print(ans)
  """
+
+ #2
+""" import sys
+input = sys.stdin.readline
+for _ in range(int(input())):
+    arr = input()
+    cnt = 1
+    ans = 0
+    for i in arr:
+        if i is 'O':
+            ans += cnt
+            cnt += 1
+        else:
+            cnt = 1
+    print(ans) """
