@@ -1,3 +1,6 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
 
 n,l,s = map(int, input().split())
 line = []
@@ -16,16 +19,16 @@ def dfs(current_node, row, foot_print):
     return foot_print
     
 def bfs(start):
-    queue = [start]
+    queue = deque([start])
     footprint = [start]
     while queue:
-        current_node = queue.pop(0)
+        current_node = queue.popleft()
         for search_node in range(len(arr[current_node])):
             if arr[current_node][search_node] and search_node not in footprint:
                 footprint += [search_node]
-                queue += [search_node]
+                queue.append(search_node)
     return footprint
     
 
 print(dfs(s,arr,[]))
-# print(bfs(s))
+print(bfs(s))
