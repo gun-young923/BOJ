@@ -38,11 +38,10 @@ from collections import deque
 input = sys.stdin.readline
 
 n,m,v = map(int, input().split())
-line = []
-arr = [[0]*(n+1) for _ in range(n+1)]
-for i in range(l):
+g = [[0]*(n+1) for _ in range(n+1)]
+for i in range(m):
     a,b = map(int, input().split())
-    arr[a][b] = arr[b][a] = 1
+    g[a][b] = g[b][a] = 1
 
 
 def dfs(v):
