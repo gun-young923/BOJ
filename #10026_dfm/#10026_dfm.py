@@ -1,3 +1,4 @@
+# dfm방식 재귀
 import sys
 sys.setrecursionlimit(100000) #재귀함수 깊이 제한 수정
 input = sys.stdin.readline
