@@ -1,30 +1,23 @@
-
-import sys
-input = sys.stdin.readline
-
-
-
-def dfs(x,y,word):
-    if x < 0 or x > 4 or y < 0 or y > 4:
+def dfs(x, y, number):
+    if len(number) == 6: 
+        if number not in result: 
+            result.append(number)
         return
-    if len(word) == 6:
-        if word not in 
-        pass
+        
+    dx = [1, -1, 0, 0]
+    dy = [0, 0, 1, -1] 
+    for k in range(4):
+        ddx = x + dx[k]
+        ddy = y + dy[k]
+        
+        if 0 <= ddx < 5 and 0 <= ddy < 5:
+            dfs(ddx, ddy, number + matrix[ddx][ddy]) 
 
-    # arr.append(g[x][y])
-    for i in range(4):
-        X = x + dir[i][0]
-        Y = y + dir[i][1]
-        dfs(X,Y)
 
+matrix = [list(map(str, input().split())) for _ in range(5)]
 
-ans = []
-g = []
-dir = [(-1,0),(1,0),(0,-1),(0,1)]
-for i in range(5):
-    g.append(list(map(int, input().split())))
-
+result = []
 for i in range(5):
     for j in range(5):
-        
-        dfs(i,j,g[i][j])
+        dfs(i, j, matrix[i][j]) 
+print(len(result))
