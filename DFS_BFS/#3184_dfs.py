@@ -1,3 +1,4 @@
+# dfs
 import sys
 sys.setrecursionlimit(100000)
 input = sys.stdin.readline
@@ -15,7 +16,7 @@ def dfs(x,y):
             dfs(X,Y)
     return cnt
 
-R ,C = map(int, input().split())                # input R, C
+R ,C = map(int, input().split())                # input R,C
 world = []
 visited = [[0]*C for _ in range(R)]
 dir = [(1,0),(-1,0),(0,1),(0,-1)]
@@ -34,12 +35,3 @@ for i in range(R):
             else :
                 ans[1] += wolf
 print(ans[0],ans[1])
-
-# 2 
-"""
-양과 늑대의 좌표만 각각 저장 -> 그 좌표들만 저격하여 dfs()돌린다 (필요없는부분 투자 X)
-    지나간 부분은 #으로 변경 -> visited[] 만들필요 X
-"""
-
-# dfs #2 풀고 bfs로도 풀어보기
-
