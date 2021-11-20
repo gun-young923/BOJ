@@ -32,7 +32,7 @@ def dfs(x,y,word):
         Y = y + dir[i][1]
         if 0 <= X < 5 and 0 <= Y < 5:
             dfs(X,Y,word+g[X][Y])
-ans = set([])                           # set([])
+ans = set()                           # set()
 dir = [(-1,0),(1,0),(0,-1),(0,1)]
 g = [input().split() for _ in range(5)]
 for i in range(5):
