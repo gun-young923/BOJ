@@ -5,41 +5,28 @@ import sys
 from collections import deque
 input =sys.stdin.readline
 
-""" def dfs(x,y):       
-    global cnt
-    for i in range(4):
-        X = x + dir[i][0]
-        Y = y + dir[i][1]
-        if 0 <= X < n and 0 <= Y < m and cmap[X][Y] != 'X' and visited[X][Y] == 0:
-            visited[X][Y] = 1
-            if cmap[X][Y] == 'P':
-                cnt += 1        
-            dfs(X,Y)
-    return cnt """
-# visited[]
 def bfs(s):
     global cnt
     x,y = s
-    # visited[x][y] = 1 
+    visited[x][y] = 1 
     queue = deque()
     queue.append(s)
     while queue:
         x,y = queue.popleft()
-        visited[x][y] = 1
         if cmap[x][y] == 'P':
             cnt += 1
-        
-    
-
-
+        for i in range(4):
+            X = x + dir[i][0]
+            Y = y + dir[i][1]
+            if 0 <= X < n and 0 <= Y < m and visited[X][Y] == 0 and cmap[X][Y] != 'X':
+                queue.append((X,Y))
+                visited[X][Y] = 1
     return cnt
-
 cmap = []
 cnt = 0
 dir = [(-1,0),(1,0),(0,-1),(0,1)]
 n, m = map(int, input().split())
 visited = [[0]*m for _ in range(n)]
-
 for i in range(n):
     info = list(input().rstrip())
     if 'I' in info:
