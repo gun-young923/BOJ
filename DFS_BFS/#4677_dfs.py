@@ -10,7 +10,7 @@ def dfs(x,y):
         Y = y + dir[i][1]
         if 0 <= X < m and 0 <= Y < n and visited[X][Y] == 0 and arr[X][Y] == '@':
             dfs(X,Y) 
-    return x,y
+    return 1
 ans = []
 while 1:                                # @ == oil deposit / # == nothing
     m, n = map(int, input().split())
@@ -31,8 +31,7 @@ while 1:                                # @ == oil deposit / # == nothing
     for i in oil_d:
         x,y = i    
         if visited[x][y] == 0:
-            cnt += 1
-            a,b = dfs(x,y)
+            cnt += dfs(x,y)
     ans.append(cnt)
 for i in ans:
     print(i)
