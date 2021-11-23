@@ -1,27 +1,63 @@
-"""
-문제
-영우는 개구리다 개굴개굴개굴
+# dfs
+import sys
+sys.setrecursionlimit(10**5)
+input = sys.stdin.readline
 
-영우는 지금 n개의 돌이 일렬로 놓여있는 돌다리에 있다. 그리고 돌다리의 돌에는 숫자가 하나씩 적혀있다. 
-영우는 이 숫자가 적혀있는 만큼 왼쪽이나 오른쪽으로 점프할 수 있는데, 이때 돌다리 밖으로 나갈 수는 없다.
+# flag를 주어 def 안에서 열별로 탐색할지 행별로 탐색할지 결정?
+# '-' 는 가로로 같은 행에 있으면 1개로 친다
+# '|' 는 세로로 같은 열에 있으면 1개로 친다
 
-영우는 이 돌다리에서 자기가 방문 가능한 돌들의 개수를 알고 싶어한다. 
-방문 가능하다는 것은 현재위치에서 다른 돌을 적절히 밟아 해당하는 위치로 이동이 가능하다는 뜻이다.
+def sol(i,j,t):
+    visited[i][j] = 1
+    if t == '-':
+        # '-' 같은 행에 연속해서 몇개 있는지 탐색
+        if j+1 < m and room[i][j+1] == '-':
+            sol(i,j+1,t)
+    elif t == '|':
+        # '|' 같은 열에 연속해서 몇개 있는지 탐색
+        if i+1 < n and room[i+1][j] == '|':
+            sol(i+1,j,t)
+    return 1
 
-현재 위치가 주어졌을 때, 영우가 방문 가능한 돌들의 개수를 출력하시오.
+n, m = map(int, input().split())
+room = [input().rstrip() for _ in range(n)]
+visited = [[0]*(m) for _ in range(n)]
+cnt = 0
+for i in range(n):
+    for j in range(m):
+        if visited[i][j] == 0:
+            cnt += sol(i,j,room[i][j])
+print(cnt)
 
-입력
-첫 번째 줄에는 돌다리의 돌 개수 n이 주어진다.(1≤n≤100,000) 돌의 번호는 왼쪽부터 1번에서 n번이다. 
-다음 줄에는 그 위치에서 점프할 수 있는 거리 Ai가 주어진다.(1≤Ai≤100,000)
 
-다음 줄에는 출발점 s가 주어진다.(1≤s≤n)
+# bfs
+""" import sys
+from collections import deque
+sys.setrecursionlimit(10**5)
+input = sys.stdin.readline
 
-출력
-영우가 방문 가능한 돌들의 개수를 출력하시오.
+# flag를 주어 def 안에서 열별로 탐색할지 행별로 탐색할지 결정?
+# '-' 는 가로로 같은 행에 있으면 1개로 친다
+# '|' 는 세로로 같은 열에 있으면 1개로 친다
 
-예제 입력 1         예제 출력 1
-5                   5
-1 4 2 2 1
-3
-"""
+def sol(i,j,t):
+    visited[i][j] = 1
+    if t == '-':
+        # '-' 같은 행에 연속해서 몇개 있는지 탐색
+        if j+1 < m and room[i][j+1] == '-':
+            sol(i,j+1,t)
+    elif t == '|':
+        # '|' 같은 열에 연속해서 몇개 있는지 탐색
+        if i+1 < n and room[i+1][j] == '|':
+            sol(i+1,j,t)
+    return 1
 
+n, m = map(int, input().split())
+room = [input().rstrip() for _ in range(n)]
+visited = [[0]*(m) for _ in range(n)]
+cnt = 0
+for i in range(n):
+    for j in range(m):
+        if visited[i][j] == 0:
+            cnt += sol(i,j,room[i][j])
+print(cnt) """
