@@ -10,7 +10,6 @@ input = sys.stdin.readline
 def sol(i,j,t):
     queue = deque()
     queue.append((i,j,t))
-
     while queue:
         x,y,T = queue.popleft()
         if visited[x][y] == 1:
