@@ -1,5 +1,5 @@
 # bfs 1
-import sys
+""" import sys
 from collections import deque
 input = sys.stdin.readline
 
@@ -45,4 +45,50 @@ for i in spot:
             ans[0] += cnt[0]
         else :
             ans[1] += cnt[1]
+print(ans[0], ans[1]) """
+
+# bfs 2 -> '#'으로 변경
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+def bfs(x,y):
+    V, K = 0,0
+    if g[x][y] == 'k':
+        K += 1
+    elif g[x][y] == 'v':
+        V += 1
+    g[x][y] = '#'
+    q = deque()
+    q.append((x,y))
+    while q:
+        x,y = q.popleft()
+        for i in range(4):
+            X = x + dir[i][0]
+            Y = y + dir[i][1]
+            if 0 <= X < r and 0 <= Y < c and g[X][Y] != '#':
+                q.append((X,Y))
+                if g[X][Y] == 'k':
+                    K += 1
+                elif g[X][Y] == 'v':
+                    V += 1
+                g[X][Y] = '#'
+    return K,V
+
+r, c = map(int, input().split())
+dir = [(1,0),(-1,0),(0,1),(0,-1)]
+g = []
+
+ans = [0,0]
+g = [list(input().rstrip()) for _ in range(r)]
+
+for i in range(r):
+    for j in range(c):
+        
+        if g[i][j] != '#':
+            K, V = bfs(i,j)
+            if K > V:
+                ans[0] += K
+            else :
+                ans[1] += V                
 print(ans[0], ans[1])
