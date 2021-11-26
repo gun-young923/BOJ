@@ -1,3 +1,5 @@
+# dfs
+# pypy3로 했을때 통과 python3는 시간초과
 import sys
 sys.setrecursionlimit(10**5)
 input = sys.stdin.readline
