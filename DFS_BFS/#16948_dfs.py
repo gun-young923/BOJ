@@ -1,4 +1,4 @@
-import sys
+""" import sys
 from collections import deque
 input = sys.stdin.readline
 
@@ -20,9 +20,28 @@ def bfs(x,y,cnt):
                 map[X][Y] = 1
 
     return -1
-    n = int(input())
+n = int(input())
 x1,y1,x2,y2 = map(int, input().split())
 dir = [(-2,-1),(-2,1),(0,-2),(0,2),(2,-1),(2,1)]
 map = [[0]*n for _ in range(n)]
 ans = bfs(x1,y1,0)
-print(ans)
+print(ans) """
+
+#2 수식
+n = int(input())
+r1, c1, r2, c2 = map(int, input().split())
+cnt = 0
+xd = abs(r2 - r1)
+if xd % 2 == 0:
+    while xd > 0:
+        xd -= 2
+        c1 += 1 if c1 <= c2 else -1
+        cnt += 1
+    yd = abs(c2 - c1)
+    if yd % 2 == 0:
+        cnt += yd // 2
+        print(cnt)
+    else:
+        print(-1)
+else:
+    print(-1)
