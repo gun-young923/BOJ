@@ -1,23 +1,24 @@
-a,b,n,m = map(int, input().split())
+from collections import deque
+import sys
+input = sys.stdin.readline
 
-cnt = 0
-max_val = max(a,b)
-min_val = min(a,b)
-if n > m:
-    cnt += (n-m)//max_val
-    r = (n-m)%max_val
-    cnt += r//min_val
-    cnt += r%min_val
-    print(cnt)
-
-else:
+def sol():
+    a,b,s,e = map(int,input().split())
+    #bfs
+    queue = deque()
+    queue.append([s,0])
+    book = dict()
+    while queue:
+        s,cnt = queue.popleft()
+        temp = [s+1, s-1, s+a, s+b, s-a, s-b, a*s, b*s]
+        for i in temp:
+            if 0 <= i <= 100000 and i not in book.keys():
+                answer = cnt +1
+                if i == e:
+                    return answer
+                else:
+                    book[i] = 1
+                    queue.append([i,answer])
     
-
-    pass
-""" 
-a배 위치
-b배 위치 
-+a 의 위치
-+b 의 위치 
-+-1
-"""
+if __name__ =="__main__":
+    print(sol())
