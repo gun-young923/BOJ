@@ -1,5 +1,5 @@
 # dfs ----------------------------------------------------
-""" import sys
+import sys
 sys.setrecursionlimit(250*250)
 input = sys.stdin.readline
 
@@ -28,4 +28,4 @@ for i in range(n):
 for x,y in arr:
     if g[x][y] == 1:
         ans += dfs(x,y)
-print(ans) """
+print(ans)
