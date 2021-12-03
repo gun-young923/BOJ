@@ -36,48 +36,40 @@ N×M 크기의 공간에 아기 상어 여러 마리가 있다. 공간은 1×1 �
 
 
 """
-
-import sys
+# pypy3 520ms / python3 시간초과
+# 각각의 0마다 가장가까운 1까지 bfs로 탐색 후 그중 가장 큰값
+""" import sys
 from collections import deque
-sys.setrecursionlimit(10**5)
 input = sys.stdin.readline
 
 def bfs(x,y,cnt):
     vis = [[0]*m for _ in range(n)]
-    ans = []
     vis[x][y] = 1
     queue = deque()
     queue.append((x,y,cnt))
     while queue:
         x,y,cnt = queue.popleft()
-        if cnt != -1 and (x,y) in temp:
-            ans.append(cnt)
-            continue
         cnt += 1
+        if cnt == 0 and arr[x][y] == 1:     # 1 시작인 경우 안전거리 0
+            return 0
+        if arr[x][y] == 1:
+            return cnt
         for i in range(8):
             X = x + dir[i][0]
             Y = y + dir[i][1]
             if 0 <= X < n and 0 <= Y < m and vis[X][Y]==0:
                 queue.append((X,Y,cnt))
                 vis[X][Y] = 1
-    print(ans)
-    return min(ans)
 
 arr = []
 temp = []
 dir = [(1,0),(1,1),(1,-1),(-1,0),(-1,1),(-1,-1),(0,1),(0,-1)]
 n,m = map(int,input().split())
+arr = [list(map(int, input().split())) for _ in range(n)]       #input
+ans = []
 for i in range(n):
-    line = list(map(int, input().split()))
-    arr.append(line)
     for j in range(m):
-        if line[j] == 1:
-            temp.append((i,j))
+        ans.append(bfs(i,j,-1))
+print(max(ans)) """
 
-max_val = 0
-for x,y in temp:
-    max_val = max(max_val,bfs(x,y,-1))
-print(max_val)
 
-# 출발은 임의의 칸/ 마지막 상어칸 포함한 거리 
-# (0 0 0 0 1) 인경우 첫 0 부터 1까지 거리는 4
