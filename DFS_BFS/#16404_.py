@@ -1,7 +1,7 @@
 # 미완성 시간초과 / 메모리 초과
 
 # bfs
-import sys
+""" import sys
 from collections import deque
 input = sys.stdin.readline
 
@@ -33,7 +33,7 @@ for i in range(m):
         bfs(temp[1],temp[2])
         # print(stat)
     if temp[0] == 2:
-        print(stat[temp[1]])
+        print(stat[temp[1]]) """
 
 
 # dfs
@@ -67,3 +67,25 @@ for i in range(m):
         # print(stat)
     if temp[0] == 2:
         print(stat[temp[1]]) """
+
+
+# ver.1  (76ms)
+
+k = int(input())
+F = input()
+M = input()
+total = len(M)
+same = 0
+for i in range(total):
+  if F[i] == M[i]:
+    same += 1
+
+if same == 0:
+  print(total-k)
+elif same == total:
+  print(k)
+else:
+  if same < k:
+    print(total+same-k)
+  else:
+    print(total-same+k)
