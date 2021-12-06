@@ -25,4 +25,5 @@ input = sys.stdin.readline
 
 """ for i in sorted([int(input()) for _ in range(int(input()))]):
     print(i) """
+    
 print('\n'.join(sorted([input().rstrip() for _ in range(int(input()))])))
