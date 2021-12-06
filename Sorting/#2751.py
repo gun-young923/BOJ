@@ -22,5 +22,7 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 # pypy3 776ms / python3 1356ms
 import sys
 input = sys.stdin.readline
-for i in sorted([int(input()) for _ in range(int(input()))]):
-    print(i)
+
+""" for i in sorted([int(input()) for _ in range(int(input()))]):
+    print(i) """
+print('\n'.join(sorted([input().rstrip() for _ in range(int(input()))])))
