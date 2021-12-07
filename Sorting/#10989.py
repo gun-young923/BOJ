@@ -24,7 +24,7 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 """
 
 # 퀵정렬
-import sys
+""" import sys
 input = sys.stdin.readline
 
 def q_sort(arr):
@@ -37,4 +37,14 @@ def q_sort(arr):
 
 arr = [int(input()) for _ in range(int(input()))]
 for i in q_sort(arr):
-    print(i)
+    print(i) """
+
+# 선택정렬
+import sys
+input = sys.stdin.readline
+
+arr = [int(input()) for _ in range(int(input()))]
+for i in range(len(arr)):
+    min_index = arr[i:].index(min(arr[i:]))
+    arr[i] , arr[min_index+i] = arr[min_index+i], arr[i]
+print(arr)
