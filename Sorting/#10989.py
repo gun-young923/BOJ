@@ -40,11 +40,11 @@ for i in q_sort(arr):
     print(i) """
 
 # 선택정렬
-import sys
+""" import sys
 input = sys.stdin.readline
 
 arr = [int(input()) for _ in range(int(input()))]
 for i in range(len(arr)):
     min_index = arr[i:].index(min(arr[i:]))
     arr[i] , arr[min_index+i] = arr[min_index+i], arr[i]
-print(arr)
+print(arr) """
