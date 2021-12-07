@@ -22,3 +22,19 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 1               7
 7
 """
+
+# 퀵정렬
+import sys
+input = sys.stdin.readline
+
+def q_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    left = [x for x in arr[1:] if x <= arr[0]]
+    right = [x for x in arr[1:] if x > arr[0]]
+    arr = q_sort(left) + [arr[0]] + q_sort(right)
+    return arr
+
+arr = [int(input()) for _ in range(int(input()))]
+for i in q_sort(arr):
+    print(i)
