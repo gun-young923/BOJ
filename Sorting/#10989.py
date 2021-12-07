@@ -48,3 +48,17 @@ for i in range(len(arr)):
     min_index = arr[i:].index(min(arr[i:]))
     arr[i] , arr[min_index+i] = arr[min_index+i], arr[i]
 print(arr) """
+
+# 삽입정렬
+""" import sys
+input = sys.stdin.readline
+
+arr = [int(input()) for _ in range(int(input()))]
+for i in range(1,len(arr)):
+    for j in range(i,0,-1):
+        if arr[j] < arr[j-1]:
+            arr[j-1] ,arr[j] = arr[j], arr[j-1]
+        else:
+            break
+for i in arr:
+    print(i) """
