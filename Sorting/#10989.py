@@ -62,3 +62,16 @@ for i in range(1,len(arr)):
             break
 for i in arr:
     print(i) """
+
+# 입력값을 리스트로 하지 않고 입력받을 수 있는 최대 수 +1 까지 리스트로 만들어
+# 입력값에 해당하는 인덱스에 카운팅 후 맨앞부터 카운팅만큼 출력
+import sys
+input = sys.stdin.readline
+n = int(input())
+b = [0] * 10001
+for i in range(n):
+    b[int(input())] += 1
+for i in range(10001):
+    if b[i] != 0:
+        for j in range(b[i]):
+            print(i)
