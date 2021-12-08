@@ -28,7 +28,7 @@ im
 yours
 """
 
-import sys
+""" import sys
 input = sys.stdin.readline
 
 n = int(input())
@@ -49,4 +49,14 @@ for i in temp:
         continue
     i.sort()
     for j in i:
-        print(j)
+        print(j) """
+
+# 2
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list(set((input().rstrip() for _ in range(n))))
+arr.sort()
+arr.sort(key=lambda x:len(x))
+print('\n'.join(arr))
