@@ -21,7 +21,7 @@
 20 Sunyoung
 """
 
-import sys
+""" import sys
 input = sys.stdin.readline
 
 n = int(input())
@@ -31,4 +31,18 @@ for i in range(n):
     arr.append((int(a),b))
 arr.sort(key=lambda x: x[0])
 for i in arr:    
-    print(i[0],i[1])
+    print(i[0],i[1]) """
+
+# 시간은 약간 더 빠르다
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+temp = [[] for _ in range(201)]
+for i in range(n):
+    age,name = input().split()
+    temp[int(age)].append(age+' '+name)
+for i in temp:    
+    if i == []:
+        continue
+    print('\n'.join(i))
