@@ -27,3 +27,12 @@ arr = [list(map(int, input().split())) for _ in range(int(input()))]
 arr.sort(key=lambda x: (x[1],x[0])) # x[1] 기준 정렬 후 같은 경우 x[0]기준 정렬
 for i in arr:
     print(i[0],i[1])
+
+""" import sys
+input = sys.stdin.readline
+
+l = [input() for _ in range(int(input()))]
+l.sort(key=lambda a: (int(a.split()[1]), int(a.split()[0])))
+# print(l) # 개행문자 포함되잇음 
+print("".join(l))
+ """
