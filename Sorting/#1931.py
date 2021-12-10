@@ -28,6 +28,26 @@
 2 13
 12 14
 """
+# 정답
+import sys
+input = sys.stdin.readline
+
+n=int(input())
+arr=[]
+for i in range(n):
+    a,b=map(int,input().split())
+    arr.append([a,b])
+arr.sort(key=lambda x: (x[1],x[0]))
+print(arr)
+last=0
+cnt=0
+for i,j in arr:
+    if i>=last:
+        cnt+=1
+        last=j
+print(cnt)
+
+# 틀린답 아래2개 // 문제 이해가 잘안됨 ...;
 """ import sys
 input = sys.stdin.readline
 
@@ -50,7 +70,7 @@ for a,b,d in arr:
 print(cnt) """
 
 #------------------------------
-import sys
+""" import sys
 input = sys.stdin.readline
 
 n = int(input())
@@ -70,3 +90,4 @@ for a,b,d in arr:
         print('(%d,%d)'%(a,b),end=' / ')
         cnt += 1
 print(cnt)
+ """
