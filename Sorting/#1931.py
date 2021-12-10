@@ -49,3 +49,24 @@ for a,b,d in arr:
         cnt += 1
 print(cnt) """
 
+#------------------------------
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = []
+end = 0
+for i in range(n):
+    a,b = map(int, input().split())
+    end = max(end,b)
+    arr.append((a,b,b-a))
+temp = [0]*end
+arr.sort(key=lambda x:(x[2],x[0]))
+# print(arr)
+cnt = 0
+for a,b,d in arr:
+    if temp[a:b] == [0]*d:
+        temp[a:b] = [1]*d
+        print('(%d,%d)'%(a,b),end=' / ')
+        cnt += 1
+print(cnt)
