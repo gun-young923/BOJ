@@ -66,3 +66,20 @@ for i in sorted(arr_m):
     binary_search(arr_n,0,n-1,i)
 for i in temp.values():
     print(i,end=' ')
+
+# 일반 정답 2   408ms
+""" import sys
+input = sys.stdin.readline
+
+def sol():
+    n = input()
+    arr = set(input().split())  # list형식으로 입력받으면 시간초과 생김/ set()사용!
+    m = input()
+    ans = ""
+    for i in input().split():
+        if i in arr:
+            ans += "1 "         # 바로 print(1,end=' ') 보다 빠르다...
+        else:
+            ans += "0 "
+    print(ans)
+sol() """
