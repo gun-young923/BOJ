@@ -83,3 +83,14 @@ def sol():
             ans += "0 "
     print(ans)
 sol() """
+
+# 정답 3 (표현만다름)   412ms
+""" import sys
+input = sys.stdin.readline
+
+input()
+a=set(input().split())
+input()
+print(' '.join(['1' if j in a else '0' for j in input().split()])) """
+
+#-----------------------------------------------------------------------------
