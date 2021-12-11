@@ -94,3 +94,55 @@ input()
 print(' '.join(['1' if j in a else '0' for j in input().split()])) """
 
 #-----------------------------------------------------------------------------
+
+# 아래 2개 시간초과 실패
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr_n = list(map(int, input().split()))
+m = int(input())
+arr_m = list(map(int, input().split()))
+# temp = {i:0 for i in arr_m}
+# for i in temp:
+#     temp[i] = 1 if i in arr_n else 0
+# for i in temp.values():
+#     print(i,end=' ')
+
+for i in arr_m:
+    if i in arr_n:
+        print(1,end=' ')
+    else:
+        print(0,end=' ') """
+
+
+
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr_n = sorted(list(map(int, input().split())))
+m = int(input())
+arr_m = sorted(list(map(int, input().split())))
+temp = {i:0 for i in arr_m}
+# print('\n\n')
+# print(arr_n)
+# print(arr_m)
+# print('\n\n')
+cnt = 0
+for i in range(m):
+    for j in range(len(arr_n[cnt:])):
+        # print('----',i,j,cnt,'----')
+        # print('----',arr_m[i],arr_n[cnt:][j],'----')
+        if arr_m[i] > arr_n[cnt:][j]:
+            continue
+        elif arr_m[i] == arr_n[cnt:][j]:
+            temp[arr_m[i]] += 1
+            cnt += j+1
+            break
+        else:
+            cnt += j
+            break
+for i in temp.values():
+    print(i,end=' ') """
+
