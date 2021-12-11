@@ -22,6 +22,7 @@
 8
 10 9 -5 2 3 4 5 -10
 """
+
 # 이진탐색 Binary_Search
 import sys
 input = sys.stdin.readline
@@ -32,7 +33,7 @@ m = int(input())
 arr_m = list(map(int, input().split()))
 temp = {i:0 for i in arr_m}
 
-# 재귀함수 이진탐색 3708ms                  # 1
+        # 재귀함수 이진탐색 3708ms                  # 1
 ''' def binary_search(arr,s,e,target):
     if s > e:
         return
@@ -45,7 +46,7 @@ temp = {i:0 for i in arr_m}
         binary_search(arr,s,mid-1,target)
     return '''
 
-# 반복문 이진탐색 2908ms                    # 2
+        # 반복문 이진탐색 2908ms                    # 2
 def binary_search(arr,s,e,target):
     while s <= e:
         mid = (s+e)//2
@@ -114,7 +115,6 @@ for i in arr_m:
         print(1,end=' ')
     else:
         print(0,end=' ') """
-
 
 
 """ import sys
