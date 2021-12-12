@@ -106,6 +106,7 @@ for i in arr_m:
         ans += '0 '
 print(ans)
 
+
 # 가장 빠른 답  564ms
 """ import sys
 from collections import Counter
