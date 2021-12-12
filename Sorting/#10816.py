@@ -47,3 +47,43 @@ for i in arr_m:
         ans += '0 '
 print(ans)
  """
+
+#2 이진탐색 Binary_Search        3280ms
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr_n = list(map(int, input().split()))
+m = int(input())
+arr_m = list(map(int, input().split()))
+#1
+temp = dict()
+for i in arr_n:
+    if i not in temp.keys():
+        temp[i] = 0
+    temp[i] += 1
+arr_n = list(set(arr_n))
+#2  count 떄문인지 몰라도 시간초과
+'''
+temp = {i:arr_n.count(i) for i in arr_n}
+# print(temp)
+'''
+# 반복문 이진탐색 
+def binary_search(arr,s,e,target):
+    while s <= e:
+        mid = (s+e)//2
+        if arr[mid] == target:
+            # temp[arr[mid]] += 1
+            return str(temp[arr[mid]])+' '
+        elif arr[mid] < target:
+            s = mid + 1
+        else:
+            e = mid - 1
+    return '0 '
+
+cnt = 0
+arr_n.sort()
+ans = ""
+for i in arr_m:
+    ans += binary_search(arr_n,0,len(arr_n)-1,i)
+print(ans) """
