@@ -87,3 +87,21 @@ ans = ""
 for i in arr_m:
     ans += binary_search(arr_n,0,len(arr_n)-1,i)
 print(ans) """
+
+#3 Counter 사용 928ms / Counter사용 시 output = dict()형식 {a:b,...}
+import sys
+from collections import Counter
+input = sys.stdin.readline
+
+input()
+cnt = Counter(input().split())
+input()
+arr_m = input().split()
+# print('------------------------------------')
+ans=""
+for i in arr_m:
+    if i in cnt.keys():
+        ans += str(cnt[i]) + ' '
+    else:
+        ans += '0 '
+print(ans)
