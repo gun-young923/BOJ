@@ -105,3 +105,13 @@ for i in arr_m:
     else:
         ans += '0 '
 print(ans)
+
+# 가장 빠른 답  564ms
+""" import sys
+from collections import Counter
+input = sys.stdin.readline
+
+input()
+cnt = Counter(input().split())
+input()
+print(' '.join(str(cnt[m]) if m in cnt else '0' for m in input().split())) """
