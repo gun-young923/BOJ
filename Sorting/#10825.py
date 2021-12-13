@@ -49,5 +49,6 @@ input=sys.stdin.readline
 n=int(input())
 def sol(x):
     return (-int(x[1]),int(x[2]),-int(x[3]),x[0])
-data=[sol(input().split()) for _ in range(n)]      
+data=[sol(input().split()) for _ in range(n)]       
+# sort()는 앞원소부터 정렬. 같을 시 차례로 다음 원소 정렬 순
 print(*map(lambda x:x[3],sorted(data)),sep='\n')    # sorted(data)의 4번째 원소들만 모아 출력
