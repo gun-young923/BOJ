@@ -27,3 +27,6 @@ a = sorted(map(int, input().split()))
 """ for i in a:
     print(i,end=' ') """
 print(*a)   # *표기 기능 중 하나는 unpack
+
+# 정답 2 join으로 표기
+#print(" ".join(map(str,sorted(list(map(int,input().split()))))))
