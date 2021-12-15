@@ -24,3 +24,17 @@ input = sys.stdin.readline
 n = int(input())
 temp = set(map(int, input().split()))
 print(*sorted(list(temp)))
+
+# 정답 2---------------------
+input()
+print(*sorted({*input().split()},key=int)) # key=int -> str형식 숫자를 int기준으로 비교?
+
+''' # key=int -> str형식 숫자를 int기준으로 비교?
+>>> a = ['12','2','21','8','83','9']  
+>>> a.sort()
+>>> a
+['12', '2', '21', '8', '83', '9']
+>>> a.sort(key=int)
+>>> a
+['2', '8', '9', '12', '21', '83']
+'''
