@@ -34,3 +34,11 @@ input = sys.stdin.readline
 
 n,m = map(int, input().split())
 print(*sorted(list(map(int, input().split()))+list(map(int, input().split())))) """
+
+# sol 2 692ms
+
+import sys
+input()
+print(' '.join(sorted(sys.stdin.read().split(), key=int)))
+# sys.stdin.readline == enter 기준 입력 받기?
+# sys.stdin.read == enter 상관없이 ctrl z 전까지 모두 입력받기?
