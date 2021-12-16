@@ -32,3 +32,18 @@ for i in range(t):
         print('KIN')
     else:
         print(sum(arr))
+
+# min max() 사용        92ms
+""" import sys
+input = sys.stdin.readline
+
+t = int(input())
+for i in range(t):
+    arr = list(map(int, input().split()))
+    arr.remove(max(arr))
+    arr.remove(min(arr))
+    
+    if max(arr) - min(arr) >= 4:
+        print('KIN')
+    else:
+        print(sum(arr)) """
