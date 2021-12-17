@@ -59,3 +59,18 @@ temp = sorted(list(set(arr)))
 for i in arr:
     cnt = len(temp[:temp.index(i)])
     print(cnt,end=' ') """
+
+# 3 통과 2276ms
+# list.index() -> 시간복잡도 O(N)
+# dict() 형태로 저장하면 O(1)로 시간 줄인다.
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+temp = sorted(list(set(arr)))
+dic = {temp[i]:i for i in range(len(temp))}
+for i in arr:
+    print(dic[i], end=' ')
