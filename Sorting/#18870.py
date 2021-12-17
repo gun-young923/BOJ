@@ -64,13 +64,27 @@ for i in arr:
 # list.index() -> 시간복잡도 O(N)
 # dict() 형태로 저장하면 O(1)로 시간 줄인다.
 
-import sys
+""" import sys
 input = sys.stdin.readline
 
 n = int(input())
 arr = list(map(int, input().split()))
 
-temp = sorted(list(set(arr)))
-dic = {temp[i]:i for i in range(len(temp))}
+temp = sorted(set(arr))
+# dic = {temp[i]:i for i in range(len(temp))}
+dic = {v:i for i,v in enumerate(temp)}
 for i in arr:
-    print(dic[i], end=' ')
+    print(dic[i], end=' ') """
+
+# 4 다른정답
+import sys
+
+input = sys.stdin.readline()
+arr = list(map(int, input().split()))
+temp = sorted(set(arr))
+# dictionary 형식으로 temp원소와 0~len(temp)-1 까지 원소를 1:1 매칭으로 zip 하여 표현
+# ex)   a = [1,2,3,4] / b = [11,22,33,44]
+#       c = list(zip(a,b)) ==> [(1,11),(2,22),(3,33),(4,44)]
+location = dict(zip(temp, map(str, range(len(temp)))))
+
+sys.stdout.write(' '.join([location[i] for i in arr]))
