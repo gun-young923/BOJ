@@ -48,3 +48,14 @@ for i in arr:
                 temp[j] = 1
                 cnt += 1
     print(cnt,end=' ') """
+
+# 2 시간초과
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list(map(int, input().split()))
+temp = sorted(list(set(arr)))
+for i in arr:
+    cnt = len(temp[:temp.index(i)])
+    print(cnt,end=' ') """
