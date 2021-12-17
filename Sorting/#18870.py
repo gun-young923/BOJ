@@ -28,3 +28,23 @@ X1, X2, ..., XN에 좌표 압축을 적용한 결과 X'1, X'2, ..., X'N를 출�
 6
 1000 999 1000 999 1000 999      1 0 1 0 1 0
 """
+
+# 1 시간초과
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+
+for i in arr:
+    cnt = 0
+    temp = {i:0 for i in set(arr)}
+    for j in arr:
+        if i == j:
+            continue
+        if i > j:
+            if temp[j] != 1:
+                temp[j] = 1
+                cnt += 1
+    print(cnt,end=' ') """
