@@ -72,7 +72,8 @@ arr = list(map(int, input().split()))
 
 temp = sorted(set(arr))
 # dic = {temp[i]:i for i in range(len(temp))}
-dic = {v:i for i,v in enumerate(temp)}
+dic = {v:i for i,v in enumerate(temp)}  
+# enumerate(list) => 각각 원소마다 (index,value) 형식으로 나타내줌
 for i in arr:
     print(dic[i], end=' ') """
 
