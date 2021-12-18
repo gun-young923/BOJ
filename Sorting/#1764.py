@@ -23,9 +23,11 @@ baesangwook
 ohhenrie
 clinton
 """
-# 실패 / 시간초과
 
-import sys
+
+
+# 실패 / 시간초과
+""" import sys
 input = sys.stdin.readline
 
 n,m = map(int, input().split())
@@ -38,4 +40,15 @@ for i in arr_n:
         cnt += 1
         ans.append(i)
 print(cnt)
-print('\n'.join(sorted(ans)))
+print('\n'.join(sorted(ans))) """
+
+#------------------------------------
+# 집합 set()의 교집합 사용  92ms
+
+import sys
+input = sys.stdin.readline
+n,m = map(int, input().split())
+line = sys.stdin.read().splitlines()
+# arr = sorted(set(line[:n]).intersection(set(line[n:])))   # 교집합 리턴 (intersection() == &)
+arr = sorted(set(line[:n]) & set(line[n:]))
+print('\n'.join([str(len(arr)),*arr]))
