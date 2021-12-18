@@ -46,3 +46,8 @@ input = sys.stdin.readline
 arr = sorted(map(int, input().split()))
 ans = arr[0] * arr[2]
 print(ans)
+
+# 2     52ms
+""" a,b,c,d=sorted(map(int,input().split()))
+print(a*c) """
+
