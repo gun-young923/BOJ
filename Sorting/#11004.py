@@ -30,3 +30,9 @@ input = sys.stdin.read
 arr = input().split()
 print(sorted(arr[2:],key=int)[int(arr[1])-1])
 """
+# 표현만다름
+import sys
+input = sys.stdin.readline
+
+n,k = map(int, input().split())
+print(sorted(map(int, input().split()))[k-1])
