@@ -22,3 +22,11 @@ input = sys.stdin.readline
 n,k = map(int, input().split())
 arr = sorted(input().split(),key=int)
 print(arr[k-1]) """
+#-----------------------------------------
+# sol 2 4432ms 706240kb
+""" import sys
+input = sys.stdin.read
+
+arr = input().split()
+print(sorted(arr[2:],key=int)[int(arr[1])-1])
+"""
