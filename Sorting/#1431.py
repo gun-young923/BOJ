@@ -75,3 +75,6 @@ arr.sort(key=lambda x:(len(x[0]),x[1],x[0]))
 for i in arr:
     print(i[0])
  """
+ # 2 filter() 사용
+""" arr = sorted((input() for _ in range(int(input()))), key=lambda x:(len(x), sum(map(int,filter(lambda _: _ in '123456789',x))), x))
+print('\n'.join(arr)) """
