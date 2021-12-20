@@ -56,3 +56,22 @@ ACAAA
 2.  만약 1,2번 둘 조건으로도 비교할 수 없으면, 사전순으로 비교한다. 
 3.  숫자가 알파벳보다 사전순으로 작다.
 '''
+# 1 68ms
+""" import sys
+input = sys.stdin.readline
+
+arr = []
+num = [str(i) for i in range(10)]
+n = int(input())
+for i in range(n):
+    cnt = 0
+    line = input().rstrip()
+    for j in line:
+        if j in num:
+            cnt += int(j)
+    arr.append([line,cnt])       
+
+arr.sort(key=lambda x:(len(x[0]),x[1],x[0]))
+for i in arr:
+    print(i[0])
+ """
