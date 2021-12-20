@@ -78,3 +78,7 @@ for i in arr:
  # 2 filter() 사용
 """ arr = sorted((input() for _ in range(int(input()))), key=lambda x:(len(x), sum(map(int,filter(lambda _: _ in '123456789',x))), x))
 print('\n'.join(arr)) """
+
+# 3 a.isnumeric() 사용 -> str형식안에 숫자인지 판별 // 숫자면 True 리턴
+arr = sorted((input() for _ in range(int(input()))), key=lambda x:(len(x), sum([int(i) for i in x if i.isnumeric()]), x))
+print('\n'.join(arr))
