@@ -66,3 +66,23 @@ for i in range(3):
     print(i)    
     print(arr[i][0], arr[i][1]) """
     
+#-----------------------------------------------------------
+# 2
+n = int(input())
+arr = []
+arr = sorted([list(map(int, input().split())) for _ in range(n)] , key=lambda x:-x[2])
+
+g = arr[0]
+s = arr[1]
+b = None 
+
+for i in range(2, n):
+  if g[0] == s[0] == arr[i][0]:
+    continue 
+  else:
+    b = arr[i] 
+    break
+
+print(g[0], g[1])
+print(s[0], s[1])
+print(b[0], b[1])
