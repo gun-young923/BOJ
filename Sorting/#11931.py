@@ -20,4 +20,5 @@ N개의 수가 주어졌을 때, 이를 내림차순으로 정렬하는 프로�
 import sys
 input = sys.stdin.readline  
 arr = sorted([int(input()) for _ in range(int(input()))],reverse=True)
+# arr = sorted(map(int, sys.stdin.read().splitlines()[1:]),reverse=True)
 print('\n'.join(map(str, arr)))
