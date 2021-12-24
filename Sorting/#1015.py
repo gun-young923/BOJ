@@ -28,3 +28,33 @@ N은 50보다 작거나 같은 자연수이고, 배열의 원소는 1,000보다 
 8                   4 0 6 1 3 7 2 5
 4 1 6 1 3 6 1 4
 """
+
+# 1     72ms
+""" import sys
+input = sys.stdin.readline
+
+n = int(input())
+A = list(map(int, input().split()))
+B = sorted(A)
+P = []
+dic = {i:0 for i in set(A)}
+# print(B)
+# print(dic)
+for i in A:
+    temp = B.index(i) + dic[i]
+    dic[i] += 1
+    # print('i = %d // temp = %d'%(i,temp))
+    P.append(temp)
+print(*P) """
+
+
+#--------------------------------------------------------
+# 2
+n = input()
+A = [*map(int,input().split())]
+ans = [0]*n
+for i in range(n):
+    temp = A.index(min(A))
+    ans[temp] = i
+    A[temp] = 1001      # A 원소의 최대값은 1000 이기에 나올 수 없는 값인 1001 대입
+print(*ans)
