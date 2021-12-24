@@ -45,3 +45,14 @@ for i in A:
     # print('i = %d // temp = %d'%(i,temp))
     P.append(temp)
 print(*P) """
+
+#--------------------------------------------------------
+# 2
+n = input()
+A = [*map(int,input().split())]
+ans = [0]*n
+for i in range(n):
+    temp = A.index(min(A))
+    ans[temp] = i
+    A[temp] = 1001      # A 원소의 최대값은 1000 이기에 나올 수 없는 값인 1001 대입
+print(*ans)
