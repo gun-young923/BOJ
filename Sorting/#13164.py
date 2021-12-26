@@ -24,3 +24,11 @@
 5 3                 3
 1 3 5 6 10
 """
+
+import sys
+from itertools import combinations
+input = sys.stdin.readline
+
+n,k = map(int, input().split())
+arr = list(map(int, input().split()))
+candidates = list(combinations(empty_,3))
