@@ -45,3 +45,16 @@ for i in temp:
         print(i[0],end='\n')    
     else:
         print(i[0],end=' ') """
+        
+# 2     68ms (dic 에 숫자별 영어 사전순 대로 정렬)
+dic=[9,4,8,7,2,1,6,5,0,3]
+m,n=map(int,input().split())        # 만약 한자리가 '8','eight' 이면 dic[8]값인 0으로 제일 우선순위
+arr=sorted(list(map(str, range(m,n+1))),key=lambda x:[dic[int(j)]for j in x])
+cnt = 0
+for i in arr:
+    cnt += 1
+    if cnt == 10:
+        cnt = 0
+        print(i,end='\n')
+    else:
+        print(i,end=' ')
