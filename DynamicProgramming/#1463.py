@@ -25,7 +25,6 @@ X가 2로 나누어 떨어지면, 2로 나눈다.
 
 # 1 600ms 상향식
 n = int(input())
-
 d = [0]*(n+1)
 for i in range(2,n+1):
     d[i] = d[i-1]+1
@@ -37,6 +36,7 @@ print(d[n])
 
 # 2 60ms 하향식
 s={1:0,2:1}
+
 def f(n):
     if n in s:
         return s[n]
