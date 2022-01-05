@@ -34,3 +34,12 @@ for i in range(2,n+1):
     if i%3 == 0:
         d[i] = min(d[i],d[i//3]+1)
 print(d[n])
+
+# 2 60ms 하향식
+s={1:0,2:1}
+def f(n):
+    if n in s:
+        return s[n]
+    s[n] = min(f(n//2)+n%2,f(n//3)+n%3) + 1
+    return s[n]
+print(f(int(input())))
