@@ -51,3 +51,17 @@ for i in range(n):
     for j,a,b in zip(range(len(arr[i])),[0]+ans,ans+[0]):
         ans[j] = max(a+arr[i][j], b+arr[i][j])
 print(max(ans))
+
+# 2 simplized
+""" import sys
+input = sys.stdin.readline
+def sol():
+    n = int(input())
+    triangle =[]
+    for _ in range(n):
+        triangle.append(list(map(int, input().split())))
+    temp = []
+    for i in range(n):
+        temp = [max(a+c, b+c) for a,b,c in zip([0]+temp, temp+[0], triangle[i])]     
+    print(max(temp))
+sol() """
